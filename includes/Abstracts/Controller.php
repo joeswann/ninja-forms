@@ -3,18 +3,25 @@
 abstract class NF_Abstracts_Controller
 {
     /**
-     * Errors passed back to the client in the Reponse.
+     * Data (Misc.) passed back to the client in the Response.
+     *
+     * @var array
+     */
+    protected $_data = array();
+
+    /**
+     * Errors passed back to the client in the Response.
      *
      * @var array
      */
     protected $_errors = array();
 
     /**
-     * Data (Misc.) passed back to the client in the Response.
+     * Debug Messages passed back to the client in the Response.
      *
      * @var array
      */
-    protected $_data = array();
+    protected $_debug = array();
 
     /*
      * PUBLIC METHODS
@@ -44,7 +51,7 @@ abstract class NF_Abstracts_Controller
             $data = $this->_data;
         }
 
-        $response = array( 'errors' => $this->_errors, 'data' => $data );
+        $response = array( 'data' => $data, 'errors' => $this->_errors, 'debug' => $this->_debug );
 
         echo wp_json_encode( $response );
 
