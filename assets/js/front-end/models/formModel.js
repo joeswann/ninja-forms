@@ -43,8 +43,7 @@ define( [], function() {
 			var errorModel = errors.get( id );
 			errors.remove( errorModel );
 			nfRadio.channel( 'form-' + this.get( 'id' ) ).trigger( 'remove:error', this, id );
-		},
-
+		}
 	} );
 
 	return model;
