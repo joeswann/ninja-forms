@@ -35,6 +35,16 @@ jQuery( document ).ready( function( $ ) {
 					nfRadio.channel( 'form-' + formModel.get( 'id' ) ).trigger( 'disable:submit' );
 					nfRadio.channel( 'form-' + formModel.get( 'id' ) ).trigger( 'processingLabel' );
 
+					this.listenTo( nfRadio.channel( 'form' ), 'render:view', function() {
+						/**
+						 * TODO: This needs to be re-worked for backbone. It's not dynamic enough.
+						 */
+						/*
+						 * Hide form fields (but not the submit button).
+						 */
+						jQuery( '#nf-form-' + formModel.get( 'id' ) + '-cont .nf-field-container:not(.submit-container)' ).hide();
+					});
+
 					// TODO: Refactor Duplication
 					jQuery.ajax({
 						url: nfFrontEnd.adminAjax,

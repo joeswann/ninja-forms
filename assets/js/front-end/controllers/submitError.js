@@ -17,6 +17,14 @@ define([], function() {
 					nfRadio.channel( 'form-' + formID ).request( 'add:error', errorID, msg );
 				} );
 			}
+
+			/**
+			 * TODO: This needs to be re-worked for backbone. It's not dynamic enough.
+			 */
+			/*
+			 * Re-show any hidden fields during a form submission re-start.
+			 */
+			jQuery( '#nf-form-' + formID + '-cont .nf-field-container' ).show();
 		}
 
 	});
