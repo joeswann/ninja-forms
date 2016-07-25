@@ -40,6 +40,14 @@ define([], function() {
 			nfRadio.channel( 'forms' ).trigger( 'before:submit', formModel );
 			nfRadio.channel( 'form-' + formModel.get( 'id' ) ).trigger( 'before:submit', formModel );
 
+			var submit = nfRadio.channel( 'form-' + formModel.get( 'id' ) ).request( 'maybe:submit', formModel );
+
+			if ( false == submit ) {
+				nfRadio.channel( 'forms' ).trigger( 'submit:cancel', formModel );
+				nfRadio.channel( 'form-' + formModel.get( 'id' ) ).trigger( 'submit:cancel', formModel );
+				return;
+			}
+
 			/*
 			 * Make sure we don't have any form errors before we submit.
 			 * Return false if we do.
