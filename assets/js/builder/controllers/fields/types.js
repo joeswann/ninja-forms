@@ -72,7 +72,7 @@ define( [
 			nfRadio.channel( 'fields' ).reply( 'get:typeSections', this.getTypeSections, this );
 			nfRadio.channel( 'fields' ).reply( 'get:savedFields', this.getSavedFields, this );
 			// Listen to clicks on field types
-			this.listenTo( nfRadio.channel( 'drawer' ), 'click:fieldType', this.addStagedField );
+			this.listenTo( nfRadio.channel( 'drawer' ), 'click:fieldType', this.addField );
 		},
 
 		/**
@@ -104,7 +104,7 @@ define( [
          * @param Object e event
          * @return void
          */
-        addStagedField: function( e ) {
+        addField: function( e ) {
         	var type = jQuery( e.target ).data( 'id' );
 
         	nfRadio.channel( 'fields' ).request( 'add', {
