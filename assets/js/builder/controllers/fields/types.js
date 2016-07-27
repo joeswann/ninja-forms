@@ -106,7 +106,14 @@ define( [
          */
         addStagedField: function( e ) {
         	var type = jQuery( e.target ).data( 'id' );
-        	nfRadio.channel( 'fields' ).request( 'add:stagedField', type );
+
+        	nfRadio.channel( 'fields' ).request( 'add', {
+				type: type,
+				label: nfRadio.channel( 'fields' ).request( 'get:type', type ).get( 'nicename' )
+			});
+
+			// Re-Draw the Field Collection
+			nfRadio.channel( 'fields' ).request( 'redraw:collection' );
         },
 
         /**

@@ -19,7 +19,7 @@ define( ['models/fields/fieldCollection', 'models/fields/fieldModel'], function(
 
 			// Respond to requests for data about fields and to update/change/delete fields from our collection.
 			nfRadio.channel( 'fields' ).reply( 'get:collection', this.getFieldCollection, this );
-			nfRadio.channel( 'fields' ).reply( 'get:field', this.getField, this );
+			nfRadio.channel( 'fields' ).reply( 'redraw:collection', this.redrawFieldCollection, this );
 			nfRadio.channel( 'fields' ).reply( 'get:tmpID', this.getTmpFieldID, this );
 
 			nfRadio.channel( 'fields' ).reply( 'add', this.addField, this );
@@ -38,6 +38,10 @@ define( ['models/fields/fieldCollection', 'models/fields/fieldModel'], function(
 
 		getFieldCollection: function() {
 			return this.collection;
+		},
+
+		redrawFieldCollection: function() {
+			this.collection.trigger( 'reset', this.collection );
 		},
 
 		getField: function( id ) {
