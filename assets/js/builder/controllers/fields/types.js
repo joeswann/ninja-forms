@@ -98,7 +98,7 @@ define( [
         },
 
         /**
-         * Add a field type to our staging area when the field type button is clicked.
+         * Add a field type to our fields sortable when the field type button is clicked.
          *
          * @since 3.0
          * @param Object e event
