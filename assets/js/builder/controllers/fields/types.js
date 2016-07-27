@@ -107,6 +107,11 @@ define( [
         addField: function( e ) {
         	var type = jQuery( e.target ).data( 'id' );
 
+			if( e.shiftKey ){
+				nfRadio.channel( 'fields' ).request( 'add:stagedField', type );
+				return;
+			}
+
         	var fieldModel = nfRadio.channel( 'fields' ).request( 'add', {
 				type: type,
 				label: nfRadio.channel( 'fields' ).request( 'get:type', type ).get( 'nicename' )
