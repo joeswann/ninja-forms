@@ -263,7 +263,7 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
         if( ! $has_save_action ) {
             $import[ 'actions' ][] = array(
                 'type' => 'save',
-                'label' => 'Save Form',
+                'label' => __( 'Save Form', 'ninja-forms' ),
                 'active' => TRUE
             );
         }
