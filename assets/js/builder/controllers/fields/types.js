@@ -107,10 +107,23 @@ define( [
         addField: function( e ) {
         	var type = jQuery( e.target ).data( 'id' );
 
-        	nfRadio.channel( 'fields' ).request( 'add', {
+        	var fieldModel = nfRadio.channel( 'fields' ).request( 'add', {
 				type: type,
 				label: nfRadio.channel( 'fields' ).request( 'get:type', type ).get( 'nicename' )
 			});
+
+			var label = {
+				object: 'Field',
+				label: fieldModel.get( 'label' ),
+				change: 'Added',
+				dashicon: 'plus-alt'
+			};
+
+			var data = {
+				collection: nfRadio.channel( 'fields' ).request( 'get:collection' )
+			}
+
+			nfRadio.channel( 'changes' ).request( 'register:change', 'addObject', fieldModel, null, label, data );
 
 			// Re-Draw the Field Collection
 			nfRadio.channel( 'fields' ).request( 'redraw:collection' );
