@@ -189,6 +189,10 @@ define(['models/calcCollection'], function( CalcCollection ) {
 				}
 			}
 
+			if ( ! fieldModel.get( 'visible' ) ) {
+				value = 0;
+			}
+
 			return ( jQuery.isNumeric( value ) ) ? value : 0;
 		},
 

@@ -27,11 +27,11 @@
 </script>
 
 <script id="nf-tmpl-sub-header-fields" type="text/template">
-    <a class="nf-add-new nf-open-drawer" title="Add New Field" href="#" data-drawerid="addField">Add new field</a>
+    <a class="nf-master-control nf-open-drawer" title="Add New Field" href="#" data-drawerid="addField">Add new field</a>
 </script>
 
 <script id="nf-tmpl-sub-header-actions" type="text/template">
-    <a class="nf-add-new nf-open-drawer" title="Add New Action" href="#" data-drawerid="addAction">Add new action</a>
+    <a class="nf-master-control nf-open-drawer" title="Add New Action" href="#" data-drawerid="addAction">Add new action</a>
 </script>
 
 <script id="nf-tmpl-sub-header-settings" type="text/template">
