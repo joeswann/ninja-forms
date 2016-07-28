@@ -35,7 +35,7 @@
     </span>
 
     <span class="subs">
-        <a target="_blank" href="<?php echo $submissions_url; ?>">View Submissions</a>
+        <a target="_blank" href="<?php echo $submissions_url; ?>"><?php _e( 'View Submissions', 'ninja-forms' ); ?></a>
     </span>
 
 </div>
