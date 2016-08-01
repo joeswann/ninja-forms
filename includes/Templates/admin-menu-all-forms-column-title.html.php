@@ -19,11 +19,11 @@
 
 
     <span class="trash">
-        <a href="<?php echo $delete_url; ?>">Delete</a> |
+        <a href="<?php echo $delete_url; ?>"><?php _e( 'Delete', 'ninja-forms' ); ?></a> |
     </span>
 
     <span class="duplicate">
-        <a href="<?php echo $duplicate_url; ?>">Duplicate</a> |
+        <a href="<?php echo $duplicate_url; ?>"><?php _e( 'Duplicate', 'ninja-forms' ); ?></a> |
     </span>
 
     <span class="bleep">

@@ -4,7 +4,7 @@
 
         <?php
         for ($i=0; $i < 25; $i++) {
-            echo '<div class="nf-field-wrap">Field</div>';
+            echo '<div class="nf-field-wrap">' . __( 'Field', 'ninja-forms' ) . '</div>';
         }
         ?>
 
