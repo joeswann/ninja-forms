@@ -4,12 +4,12 @@
         <ul>
             <li><a href="#"><?php _e( 'Form Fields', 'ninja-forms' ); ?></a></li>
             <li><a href="#"><?php _e( 'Emails & Actions', 'ninja-forms' ); ?></a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="#"><?php _e( 'Settings', 'ninja-forms' ); ?></a></li>
             <li><a class="preview" href="#"><?php _e( 'Preview Changes', 'ninja-forms' ); ?><span class="dashicons dashicons-visibility"></span></a></li>
         </ul>
         <input class="nf-button primary" type="submit" value="Save" />
         <a class="nf-mobile" href="#"><span class="dashicons dashicons-editor-ul"></span></a>
-        <a class="nf-cancel" href="#">Cancel</a>
+        <a class="nf-cancel" href="#"><?php _e( 'Cancel', 'ninja-forms' ); ?></a>
     </div>
 
     <div id="nf-app-sub-header">

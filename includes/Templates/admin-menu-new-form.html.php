@@ -271,7 +271,7 @@
 </script>
 
 <script id="nf-tmpl-add-saved-field-button" type="text/template">
-    <a href="#" title="Add" class="nf-button primary">Add</a>
+    <a href="#" title="Add" class="nf-button primary"><?php _e( 'Add', 'ninja-forms' ); ?></a>
 </script>
 
 <script id="nf-tmpl-add-saved-field-loading" type="text/template">
@@ -372,7 +372,7 @@
 
 <script id="nf-tmpl-staged-fields-drag" type="text/template">
     <div class="nf-staged-fields-drag">
-        <div id="drag-item-1" class="nf-staged-fields-drag-wrap"><%= num %> Fields</div>
+        <div id="drag-item-1" class="nf-staged-fields-drag-wrap"><%= num %><? _e( ' Fields', 'ninja-forms' ); ?></div>
         <div id="drag-item-2" class="nf-staged-fields-drag-wrap">&nbsp;</div>
         <div id="drag-item-3" class="nf-staged-fields-drag-wrap">&nbsp;</div>
     </div>
