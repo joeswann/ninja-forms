@@ -372,7 +372,7 @@
 </script>
 
 <script id="nf-tmpl-drawer-staged-fields-empty" type="text/template">
-    <span></span>
+    <div class="nf-staged-fields-empty"></div>
 </script>
 
 <script id="nf-tmpl-empty" type="text/template">
