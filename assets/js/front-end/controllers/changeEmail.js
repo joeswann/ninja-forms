@@ -2,7 +2,7 @@ define([], function() {
 	var radioChannel = nfRadio.channel( 'email' );
 	var emailReg = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var errorID = 'invalid-email';
-	var errorMsg = 'Please enter a valid email address!';
+	var errorMsg = nfi18n.changeEmailErrorMsg;
 
 	var controller = Marionette.Object.extend( {
 

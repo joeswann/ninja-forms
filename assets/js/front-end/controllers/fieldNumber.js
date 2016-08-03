@@ -21,19 +21,19 @@ define([], function() {
             var step = $el.attr( 'step' );
 
             if( min && value < min ){
-                nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'number-min', 'Number Min Error' );
+                nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'number-min', nfi18n.fieldNumberNumMinError );
             } else {
                 nfRadio.channel( 'fields' ).request( 'remove:error', model.get( 'id' ), 'number-min' );
             }
 
             if ( max && value > max ){
-                nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'number-max', 'Number Max Error' );
+                nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'number-max', nfi18n.fieldNumberNumMaxError );
             } else {
                 nfRadio.channel( 'fields' ).request( 'remove:error', model.get( 'id' ), 'number-max' );
             }
 
             if( value && 0 !== value % step ){
-                nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'number-step', 'Please increment by ' + step );
+                nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'number-step', nfi18n.fieldNumberIncrementBy + step );
             } else {
                 nfRadio.channel( 'fields' ).request( 'remove:error', model.get( 'id' ), 'number-step' );
             }
