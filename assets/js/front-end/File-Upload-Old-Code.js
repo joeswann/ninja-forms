@@ -16,7 +16,7 @@
 	            	// }
 	            },
 				beforeSubmit: function( formData, jqForm, options ) {
-					nfRadio.channel( 'form-' + model.get( 'formID' ) ).trigger( 'disable:submit', 'File upload in progress.' );
+					nfRadio.channel( 'form-' + model.get( 'formID' ) ).trigger( 'disable:submit', nfi18n.fileUploadOldCodeFileUploadInProgress );
 				},
 
 				beforeSend: function() {
@@ -50,7 +50,7 @@
 						status.html( filename + ' ' + link );
 						status.fadeIn( 'fast' );
 						jQuery( el ).parent().unwrap();
-						model.set( 'value', 'FILE UPLOAD' );
+						model.set( 'value', nfi18n.fileUploadOldCodeFileUpload );
 					} );
 				},
 

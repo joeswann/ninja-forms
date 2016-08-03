@@ -16,7 +16,7 @@ define( [], function() {
             if ( 0 == jQuery( e.target ).val().length ) {
                 nfRadio.channel( 'form-' + this.model.get( 'id' ) ).request( 'remove:error', 'honeyPot' );
             } else {
-                nfRadio.channel( 'form-' + this.model.get( 'id' ) ).request( 'add:error', 'honeyPot', 'Honeypot Error' );
+                nfRadio.channel( 'form-' + this.model.get( 'id' ) ).request( 'add:error', 'honeyPot', nfi18n.honeypotHoneypotError );
             }
         }
     });

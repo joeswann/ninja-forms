@@ -1,7 +1,7 @@
 define( [], function() {
 	var radioChannel = nfRadio.channel( 'fields' );
 	var errorID = 'confirm-mismatch';
-	var errorMsg = 'These fields must match!';
+	var errorMsg = nfi18n.confirmFieldErrorMsg;
 
 	var controller = Marionette.Object.extend( {
 

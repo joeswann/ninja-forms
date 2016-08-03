@@ -76,7 +76,7 @@ define([], function() {
 
 		maybeError: function( valid, model ) {
 			if ( ! valid ) {
-				nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'required-error', 'This is a required field.' );
+				nfRadio.channel( 'fields' ).request( 'add:error', model.get( 'id' ), 'required-error', nfi18n.validateRequiredField );
 			} else {
 				nfRadio.channel( 'fields' ).request( 'remove:error', model.get( 'id' ), 'required-error' );
 			}			

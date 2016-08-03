@@ -114,7 +114,7 @@ define([], function() {
 				ui.button({
 	            className: 'dropdown-toggle',
 	            contents: linkButton({}),
-	            tooltip: 'Insert Link',
+	            tooltip: nfi18n.fieldTextareaRTEInsertLink,
 	            click: function( e ) {
 	            	that.clickLinkButton( e, context );
 	            },
@@ -142,7 +142,7 @@ define([], function() {
 			return ui.button({
 	            className: 'dropdown-toggle',
 	            contents: mediaButton({}),
-	            tooltip: 'Insert Media',
+	            tooltip: nfi18n.fieldTextareaRTEInsertMedia,
 	            click: function( e ) {
 	            	that.openMediaManager( e, context );
 	            }
@@ -159,7 +159,7 @@ define([], function() {
 
 			// Sets up the media library frame
 			this.meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
-				title: 'Select a file',
+				title: nfi18n.fieldTextareaRTESelectAFile,
 				button: { text:  'insert' }
 			});
 
