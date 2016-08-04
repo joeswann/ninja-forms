@@ -45,7 +45,17 @@ define( ['models/fields/fieldCollection', 'models/fields/fieldModel'], function(
 		},
 
 		getField: function( id ) {
-			return this.collection.get( id );
+			if ( this.collection.findWhere( { key: id } ) ) {
+				/*
+				 * First we check to see if a key matches what we were sent.
+				 */				
+				return this.collection.findWhere( { key: id } );
+			} else {
+				/*
+				 * If it doesn't, we try to return an ID that matches.
+				 */
+				return this.collection.get( id );
+			}
 		},
 
 		/**

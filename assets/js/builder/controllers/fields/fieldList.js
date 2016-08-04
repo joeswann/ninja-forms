@@ -33,7 +33,7 @@ define( [], function() {
             if( 'list' != fieldTypeData[ dataModel.get( 'type' ) ].parentType ) return;
 
             model.set( 'manual_value', true );
-        },
+        }
 
     });
 

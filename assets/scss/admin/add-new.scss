@@ -49,53 +49,39 @@
 }
 
 .nf-master-control {
-        position: absolute;
+    background: $cta_color;
+    border: 2px solid $cta_color;
+    border-radius: 40px;
+    cursor: pointer;
+    position: absolute;
+    //text-indent: -9999px;
+    height: 60px;
+    width: 60px;
+    top: auto;
+    left: auto;
+    bottom: 20px;
+    right: 30px;
+    transition: all 0.5s ease;
+    z-index: 98;
+    span {
+        display: block;
         text-indent: -9999px;
-        height: 60px;
-        width: 60px;
-        top: auto;
-        left: auto;
-        bottom: 20px;
-        right: 30px;
-        z-index: 98;
-        &:after {
-            background: $cta_color;
-            border: 2px solid $cta_color;
-            border-radius: 40px;
-            content: "";
-            padding: 8px;
-            position: absolute;
-            left: 10px;
-            width: 36px;
-            height: 36px;
-            transition: all 0.5s ease 0s
-        }
-        &:before {
-            color: #fff;
-            content: "+";
-            font-size: 40px;
-            position: absolute;
-            top: 12px;
-            left: 25px;
-            width: 28px;
-            height: 28px;
-            line-height: 24px;
-            text-indent: 0px;
-            z-index: 99;
-            transition: all 0.5s ease 0s
-        }
+    }
+    .fa {
+        color: #fff;
+        cursor: pointer;
+        font-size: 28px;
+        line-height: 28px;
+        margin: 15px 0 0 16px;
+        transition: all 0.5s ease;
+    }
     &:hover, &:active, &.active {
+        background: #fff;
         color: $cta_color;
-        transition: width 0.5s ease 0s,height 0.5s ease 0s, text-indent 0.5s ease,top 0.5s ease,left 0.5s ease;
-        &:after {
-            background: #fff;
+        transition: all 0.5s ease;
+        .fa {
             color: $cta_color;
-            transition: all 0.5s ease;
-        }
-        &:before {
-            color: $cta_color;
-            top: 16px;
-            left: 21px;
+            margin: 12px 0 0 16px;
             transform: rotate(180deg);
             transition: all 0.5s ease;
         }

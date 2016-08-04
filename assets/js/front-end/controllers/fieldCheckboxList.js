@@ -40,6 +40,14 @@ define([], function() {
                     valueFound = true;
                 }
 
+                /*
+                 * TODO: This is a bandaid fix for making sure that each option has a "visible" property.
+                 * This should be moved to creation so that when an option is added, it has a visible property by default.
+                 */
+                if ( 'undefined' == typeof option.visible ) {
+                    option.visible = true;
+                }
+
                 option.fieldID = that.id;
                 option.classes = that.classes;
                 option.index = index;
@@ -53,6 +61,7 @@ define([], function() {
                 } );
 
                 option.isSelected = ( -1 != testValues.indexOf( option.value.toString() ) );
+                
                 var template = Marionette.TemplateCache.get( '#nf-tmpl-field-listcheckbox-option' );
                 html += template( option );
             } );
