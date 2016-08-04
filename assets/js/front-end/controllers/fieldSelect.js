@@ -46,7 +46,6 @@ define([], function() {
 		},
 
 		renderOptions: function() {
-			var that = this;
 			var html = '';
 			_.each( this.options, function( option ) {
 				if ( 1 == option.selected ) {
@@ -55,13 +54,22 @@ define([], function() {
 					var selected = false;
 				}
 
+				/*
+                 * TODO: This is a bandaid fix for making sure that each option has a "visible" property.
+                 * This should be moved to creation so that when an option is added, it has a visible property by default.
+                 */
+                if ( 'undefined' == typeof option.visible ) {
+                    option.visible = true;
+                }
+
 				option.selected = selected;
-				option.fieldID = that.id;
-				option.classes = that.classes;
-				option.currentValue = that.value;
+				option.fieldID = this.id;
+				option.classes = this.classes;
+				option.currentValue = this.value;
+
 				var template = Marionette.TemplateCache.get( '#nf-tmpl-field-listselect-option' );
 				html += template( option );
-			} );
+			}, this );
 
 			return html;
 		},
