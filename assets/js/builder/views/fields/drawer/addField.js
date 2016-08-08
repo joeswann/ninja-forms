@@ -12,7 +12,7 @@ define( ['views/fields/drawer/stagingCollection', 'models/fields/stagingCollecti
 		initialize: function() {
 			this.listenTo( nfRadio.channel( 'drawer' ), 'filter:fieldTypes', this.filterFieldTypes );
 			this.listenTo( nfRadio.channel( 'drawer' ), 'clear:filter', this.removeFieldTypeFilter );
-		
+
 			this.savedCollection = nfRadio.channel( 'fields' ).request( 'get:savedFields' );
 			this.primaryCollection = this.savedCollection;
 
@@ -43,15 +43,8 @@ define( ['views/fields/drawer/stagingCollection', 'models/fields/stagingCollecti
 		removeFieldTypeFilter: function () {
 			this.primary.show( new fieldTypeSectionCollectionView( { collection: this.savedCollection } ) );
 			this.secondary.show( new fieldTypeSectionCollectionView( { collection: this.fieldTypeSectionCollection } ) );
-		},
-
-		templateHelpers: function () {
-			return {
-				isActive: function(){
-					return 'nf-staged-fields-active';
-				},
-			};
 		}
+
 	} );
 
 	return view;

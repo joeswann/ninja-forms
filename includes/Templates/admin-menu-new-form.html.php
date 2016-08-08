@@ -200,7 +200,7 @@
 
 <script id="nf-tmpl-drawer-content-add-field" type="text/template">
     <div id="nf-drawer-staging" class="nf-settings nf-stage">
-        <div class="nf-reservoir nf-drawer-staged-fields nf-field-type-droppable <%= isActive() %>"></div>
+        <div class="nf-reservoir nf-drawer-staged-fields nf-field-type-droppable"></div>
     </div>
     <span id="nf-drawer-primary"></span>
     <span id="nf-drawer-secondary"></span>
