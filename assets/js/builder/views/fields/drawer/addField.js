@@ -43,8 +43,15 @@ define( ['views/fields/drawer/stagingCollection', 'models/fields/stagingCollecti
 		removeFieldTypeFilter: function () {
 			this.primary.show( new fieldTypeSectionCollectionView( { collection: this.savedCollection } ) );
 			this.secondary.show( new fieldTypeSectionCollectionView( { collection: this.fieldTypeSectionCollection } ) );
-		}
+		},
 
+		templateHelpers: function () {
+			return {
+				isActive: function(){
+					return 'nf-staged-fields-active';
+				},
+			};
+		}
 	} );
 
 	return view;
