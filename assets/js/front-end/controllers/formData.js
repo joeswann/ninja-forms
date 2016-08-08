@@ -27,18 +27,9 @@ define(['models/formModel', 'models/formCollection', 'models/fieldCollection', '
 				var errors = new ErrorCollection();
 				formModel.set( 'errors', errors );
 				nfRadio.channel( 'form' ).trigger( 'loaded', formModel );
+				nfRadio.channel( 'form' ).trigger( 'after:loaded', formModel );
 				nfRadio.channel( 'form-' + formModel.get( 'id' ) ).trigger( 'loaded', formModel );
 			} );
-
-			// _.each( this.formCollection.models, function( form ) {
-			// 	_.each( form.get( 'fields' ).models, function( field ) {
-			// 		nfRadio.channel( field.get( 'type' ) ).trigger( 'init:model', field );
-			// 		nfRadio.channel( 'fields' ).trigger( 'init:model', field );
-			// 	} );
-				
-			// 	nfRadio.channel( 'form' ).trigger( 'loaded', form );
-			// 	nfRadio.channel( 'form-' + form.get( 'id' ) ).trigger( 'loaded', form );
-			// } );
 
 			nfRadio.channel( 'app' ).reply( 'get:form', this.getForm, this );
 			nfRadio.channel( 'app' ).reply( 'get:forms', this.getForms, this );
@@ -56,6 +47,7 @@ define(['models/formModel', 'models/formCollection', 'models/fieldCollection', '
 
 		getField: function( id ) {
 			var model = false;
+			
 			_.each( this.formCollection.models, function( form ) {
 				if ( ! model ) {
 					model = form.get( 'fields' ).get( id );	

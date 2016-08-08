@@ -64,6 +64,8 @@ class NF_AJAX_Controllers_Submission extends NF_Abstracts_Controller
 
         $this->_data['fields'] = $this->_form_data['fields'];
 
+        $this->_data = apply_filters( 'ninja_forms_submit_data', $this->_data );
+
         $this->validate_fields();
 
         $this->process_fields();
@@ -155,7 +157,7 @@ class NF_AJAX_Controllers_Submission extends NF_Abstracts_Controller
             $settings = $field_model->get_settings();
         }
 
-        $field = array_merge($field, $settings );
+        $field = apply_filters( 'ninja_forms_pre_validate_field_settings', array_merge($field, $settings ) );
 
         $field_class = Ninja_Forms()->fields[ $field['type'] ];
 
