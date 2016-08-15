@@ -30,7 +30,7 @@ function nf_check_post() {
 		if( $ajax != 1 ){
 			add_action( 'init', 'ninja_forms_setup_processing_class', 5 );
 			add_action( 'init', 'ninja_forms_pre_process', 999 );
-		}else if( $ajax == 1 AND $_REQUEST['action'] == 'ninja_forms_ajax_submit' ){
+		}else if( $ajax == 1 AND isset($_REQUEST['action']) AND $_REQUEST['action'] == 'ninja_forms_ajax_submit' ){
 			add_action( 'init', 'ninja_forms_setup_processing_class', 5 );
 			add_action( 'init', 'ninja_forms_pre_process', 999 );
 		}
